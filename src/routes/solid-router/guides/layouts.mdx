@@ -19,13 +19,9 @@ import Home from "./pages/Home";
 const Layout = (props) => {
     return (
         <>
-            <header>
-                <h1>Site header</h1>
-            </header>
+            <header>Header</header>
             {props.children}
-            <footer>
-                <p>&copy; 2024 My Site</p>
-            </footer>
+            <footer>Footer</footer>
         </>
     );
 };
@@ -34,7 +30,7 @@ render(
     () => (
         <Router root={Layout}>
             <Route path="/" component={Home} />
-            <Route path="/hello-world" component={<span>Hello world!</span>} />
+            <Route path="/hello-world" component={<div>Hello world!</div>} />
 
         </Router>
     ),
@@ -46,11 +42,7 @@ When providing a root-level layout, the `props.children` will contain the conten
 For example, when navigating to `/hello-world`, the `Hello world!` text will be rendered inside the `Layout` component.
 
 ```html title="Output"
-<header>
-    <h1>Site header</h1>
-</header>
-    <span>Hello world!</span>
-<footer>
-    <p>&copy; 2024 My Site</p>
-</footer>
+<header>Header</header>
+    <div>Hello world!</div>
+<footer>Footer</footer>
 ```
